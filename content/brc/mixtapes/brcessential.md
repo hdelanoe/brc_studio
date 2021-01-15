@@ -1,9 +1,11 @@
 ---
 title: "BRC 25 Essential MixTape"
+subtitle: "Ghetto 25"
 date: 2020-08-07
 draft: false
 
 # post thumb
+artists: "Ghetto 25"
 image: "https://f4.bcbits.com/img/a4216155694_10.jpg"
 soundcloudCode: "1096983226"
 soundcloudColor: "487a41"
