@@ -7,7 +7,7 @@
         {{ if .Params.Image }}
         <img src="{{ .Params.Image | absURL }}" alt="" class="img-fluid d-block mx-auto rounded-circle mb-4" style="height: 100px; width: 100px;">
         {{ end }}
-        <div style="font-family: Arges ExtraHeavy !important; font-size: 30%; margin-bottom: 100px !important; margin-top: 100px !important;">
+        <div style="font-family: Arges ExtraHeavy !important; font-size: 30%; margin-bottom: 100px !important; margin-top: 60px !important;">
           {{ .Content }}
         </div>
       </div>
@@ -50,7 +50,7 @@
       {{ end }}
       {{ if .Site.Params.Responsable }}         
         <div class="col-lg-4 col-sm-6 mb-5" style="text-align: center;">
-          <h5 class="mb-5">DJ VIP</h5>
+          <h5 class="mb-5">Responsable Général</h5>
           <h6 class="mb-4">{{ .Site.Params.Responsable }}</h6>
           <ul class="list-unstyled">
             {{ if .Site.Params.Responsablemobile }}
