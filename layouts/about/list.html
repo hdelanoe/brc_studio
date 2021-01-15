@@ -1,0 +1,135 @@
+{{ define "main" }}
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center" style="padding: 0;">
+        {{ if .Params.Image }}
+        <img src="{{ .Params.Image | absURL }}" alt="" class="img-fluid d-block mx-auto rounded-circle mb-4" style="height: 100px; width: 100px;">
+        {{ end }}
+        <div style="font-family: Arges ExtraHeavy !important; font-size: 30%; margin-bottom: 100px !important; margin-top: 100px !important;">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <hr style="border-top: 1px solid #fff;">
+        <h5 style="margin-top: 25px !important;">
+        </h5>
+      </div>
+      {{ if .Site.Params.Manager }}         
+      <div class="col-lg-4 col-sm-6 mb-5" style="text-align: center;">
+        <h5 class="mb-5">Management</h5>
+        <h6 class="mb-4">{{ .Site.Params.Manager }}</h6>
+        <ul class="list-unstyled">
+          {{ if .Site.Params.managermobile }}
+          <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.managermobile }}">{{ .Site.Params.managermobile }}</a></li>
+          {{ end }}
+          {{ if .Site.Params.managermail }}           
+          <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.managermail }}">{{ .Site.Params.managermail }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+      {{ if .Site.Params.Presse }}         
+        <div class="col-lg-4 col-sm-6 mb-5" style="text-align: center;">
+          <h5 class="mb-5">Presse</h5>
+          <h6 class="mb-4">{{ .Site.Params.Presse }}</h6>
+          <ul class="list-unstyled">
+            {{ if .Site.Params.Pressemobile }}
+            <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.Pressemobile }}">{{ .Site.Params.Pressemobile }}</a></li>
+            {{ end }}
+            {{ if .Site.Params.Pressemail }}           
+            <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.Pressemail }}">{{ .Site.Params.Pressemail }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ if .Site.Params.Responsable }}         
+        <div class="col-lg-4 col-sm-6 mb-5" style="text-align: center;">
+          <h5 class="mb-5">DJ VIP</h5>
+          <h6 class="mb-4">{{ .Site.Params.Responsable }}</h6>
+          <ul class="list-unstyled">
+            {{ if .Site.Params.Responsablemobile }}
+            <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.Responsablemobile }}">{{ .Site.Params.Responsablemobile }}</a></li>
+            {{ end }}
+            {{ if .Site.Params.Responsablemail }}           
+            <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.Responsablemail }}">{{ .Site.Params.Responsablemail }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      <div class="col-12 text-center mb-5">
+        <h5 style="margin-top: 25px !important;">
+          Graphisme
+        </h5>
+      </div>
+        {{ if .Site.Params.Graphiste1 }}         
+        <div class="col-lg-3 col-sm-6 mb-5" style="text-align: center;">
+        <h6 class="mb-4">{{ .Site.Params.Graphiste1 }}</h6>
+        <ul class="list-unstyled">
+          {{ if .Site.Params.Graphiste1mobile }}
+          <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.Graphiste1mobile }}">
+                {{ .Site.Params.Graphiste1mobile }}</a></li>
+          {{ end }}
+          {{ if .Site.Params.Graphiste1mail }}           
+          <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.Graphiste1mail }}">
+                {{ .Site.Params.Graphiste1mail }}</a></li>
+          {{ end }}
+          {{ if .Site.Params.Graphiste1insta }}           
+          <li class="mb-3"><i class="fa fa-instagram" style="margin-right: 5px; !important"></i><a class="text-dark" href="{{ .Site.Params.Graphiste1instalink }}">
+                {{ .Site.Params.Graphiste1insta }}</a></li>
+          {{ end }}
+        </ul>
+        </div>
+        {{ end }}
+        {{ if .Site.Params.Graphiste2 }}         
+        <div class="col-lg-3 col-sm-6 mb-5" style="text-align: center;">
+          <h6 class="mb-4">{{ .Site.Params.Graphiste2 }}</h6>
+          <ul class="list-unstyled">
+            {{ if .Site.Params.Graphiste2mobile }}
+            <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.Graphiste2mobile }}">
+                  {{ .Site.Params.Graphiste2mobile }}</a></li>
+            {{ end }}
+            {{ if .Site.Params.Graphiste2mail }}           
+            <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.Graphiste2mail }}">
+                  {{ .Site.Params.Graphiste2mail }}</a></li>
+            {{ end }}
+            {{ if .Site.Params.Graphiste2insta }}           
+            <li class="mb-3"><i class="fa fa-instagram" style="margin-right: 5px; !important"></i><a class="text-dark" href="{{ .Site.Params.Graphiste2instalink }}">
+                  {{ .Site.Params.Graphiste2insta }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+        {{ if .Site.Params.Graphiste3 }}         
+        <div class="col-lg-3 col-sm-6 mb-5" style="text-align: center;">
+          <h6 class="mb-4">{{ .Site.Params.Graphiste3 }}</h6>
+          <ul class="list-unstyled">
+            {{ if .Site.Params.Graphiste3mobile }}
+            <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.Graphiste3mobile }}">
+                  {{ .Site.Params.Graphiste3mobile }}</a></li>
+            {{ end }}
+            {{ if .Site.Params.Graphiste3mail }}           
+            <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.Graphiste3mail }}">
+                  {{ .Site.Params.Graphiste3mail }}</a></li>
+            {{ end }}
+            {{ if .Site.Params.Graphiste3insta }}           
+            <li class="mb-3"><i class="fa fa-instagram" style="margin-right: 5px; !important"></i><a class="text-dark" href="{{ .Site.Params.Graphiste3instalink }}">
+                  {{ .Site.Params.Graphiste3insta }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+        <div class="col-12 text-center mb-5">
+          <hr style="border-top: 1px solid #fff;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

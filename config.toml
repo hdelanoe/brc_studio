@@ -1,0 +1,241 @@
+######################## default configuration ####################
+baseURL = "https://brcstudio.netlify.app/"
+languageCode = "en-us"
+title = "Besançon Rythmique Club Studio"
+summaryLength = "10"
+paginate = 4
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  label = "label"
+
+############################# Plugins ##############################
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "plugins/bootstrap/bootstrap.min.css"
+  [[params.plugins.css]]
+  URL = "plugins/slick/slick.css"
+  [[params.plugins.css]]
+  URL = "plugins/themify-icons/themify-icons.css"
+  [[params.plugins.css]]
+  URL = "plugins/venobox/venobox.css"
+
+  # JS Plugins
+  [[params.plugins.js]]
+  URL = "plugins/jQuery/jquery.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/bootstrap/bootstrap.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/slick/slick.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/venobox/venobox.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/fuse.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/mark.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/search.js"
+
+
+############################## navigation ###############################
+[menu]
+
+  # main menu
+
+  [[menu.main]]
+  name = "BRC"
+  URL = "brc"
+  weight = 4
+
+  [[menu.main]]
+  name = "LMR"
+  URL = "lmr"
+  weight = 3
+
+  [[menu.main]]
+  name = "Events"
+  # URL = "LMR"
+  weight = 2
+
+  [[menu.main]]
+  name = "Artistes"
+  # URL = "html"
+  weight = 1
+
+  [[menu.main]]
+  parent = "BRC"
+  name = "Releases"
+  URL = "brc/releases"
+  weight = 1
+
+  [[menu.main]]
+  parent = "BRC"
+  name = "Mixtapes"
+  URL = "brc/mixtapes"
+  weight = 2
+
+  [[menu.main]]
+  parent = "LMR"
+  name = "Premieres"
+  URL = "lmr/premieres"
+  weight = 1
+
+  [[menu.main]]
+  parent = "LMR"
+  name = "Podcasts"
+  URL = "lmr/podcasts"
+  weight = 2
+
+  [[menu.main]]
+  parent = "LMR"
+  name = "Releases"
+  identifier = "r2"
+  URL = "lmr/releases"
+  weight = 3
+
+ #[[menu.main]]
+ #parent = "Events"
+ #name = "Soon..."
+ #URL = "podcasts/brc"
+ #weight = 1
+
+  [[menu.main]]
+  parent = "Artistes"
+  name = "Ghetto25"
+  URL = "artists/ghetto25"
+  weight = 1
+
+  # footer menu
+  [[menu.footer]]
+  name = "About"
+  URL = "about"
+  weight = 1
+
+  [[menu.footer]]
+  name = "Post"
+  URL = "blog"
+  weight = 2
+
+  [[menu.footer]]
+  name = "Contact"
+  URL = "contact"
+  weight = 3
+
+
+#################### default parameters ################################
+[params]
+logo = "/images/logo_line.png"
+footerLogo = "/images/logo_full.png"
+home = "Home"
+
+# Meta data
+description = "This is meta description"
+
+imageContact = "images/typo/contact.png"
+
+# Contact Information
+manager = "Cédric Mathis"
+managermobile = "06 22 70 66 69"
+managermail = "manager@cjmg.eu"
+
+presse = "Nina Poil"
+pressemobile = "06 31 33 00 66"
+pressemail = "nina@beyeah.net"
+
+responsable = "Julio Frésard / Marcelli"
+responsablemobile = "06 13 46 40 88"
+responsablemail = "julesfresard.world@gmail.com"
+
+graphiste1 = "Raphaël Clerget"
+graphiste1mobile = "06 66 04 38 61"
+graphiste1mail = "clerget.raphael@gmail.com"
+graphiste1insta = "@raphikdesign"
+graphiste1instalink = "https://www.instagram.com/raphikdesign/"
+
+
+graphiste2 = "Rodrigue Costello"
+graphiste2mobile = "06 25 23 28 15"
+graphiste2mail = "rodrigue.costello@gmail.com"
+graphiste2insta = "@rodriguecostello"
+graphiste2instalink = "https://www.instagram.com/rodriguecostello/"
+
+
+graphiste3 = "Timon Chapelain"
+graphiste3mobile = "06 43 04 71 92"
+graphiste3mail = "timon.chapelain@protonmail.com"
+graphiste3insta = "@timonchapelain"
+graphiste3instalink = "https://www.instagram.com/timonchapelain/"
+
+
+location = "Besançon 25"
+
+  # Preloader
+  [params.preloader]
+  enable = true
+  preloader = "" # use .png , .svg or .gif format
+
+  # search
+  [params.search]
+  enable = true
+
+############################ news letter ########################
+[params.newsletter]
+enable = true
+title = "Join Our Newsletter"
+content = "Abonne-toi"
+
+
+############################# social site ########################
+
+[[params.social]]
+title = "instagram"
+icon = "fa fa-instagram"
+link = "https://www.instagram.com/ghetto25rpz/"
+
+[[params.social]]
+title = "youtube"
+icon = "fa fa-youtube"
+link = "https://www.youtube.com/channel/UCd5SakTTdy-fksbmd1ZEmwQ"
+
+[[params.social]]
+title = "bandcamp"
+icon = "fa fa-bandcamp"
+link = "https://brc25.bandcamp.com/"
+
+#### BRC ####
+
+[[params.socialbrc]]
+title = "instagram"
+icon = "fa fa-instagram"
+link = "https://www.instagram.com/ghetto25rpz/"
+
+[[params.socialbrc]]
+title = "youtube"
+icon = "fa fa-youtube"
+link = "https://www.youtube.com/channel/UCd5SakTTdy-fksbmd1ZEmwQ"
+
+[[params.socialbrc]]
+title = "bandcamp"
+icon = "fa fa-bandcamp"
+link = "https://brc25.bandcamp.com/"
+
+[[params.socialbrc]]
+title = "soundcloud"
+icon = "fa fa-soundcloud"
+link = "https://soundcloud.com/ghetto25rpz"
+
+#### LMR ###
+
+[[params.sociallmr]]
+title = "bandcamp"
+icon = "fa fa-bandcamp"
+link = "https://brc25.bandcamp.com/"
+
+[[params.sociallmr]]
+title = "soundcloud"
+icon = "fa fa-soundcloud"
+link = "https://soundcloud.com/lamerfm"

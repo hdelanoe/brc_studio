@@ -1,0 +1,34 @@
+{{ if .Site.Params.newsletter.enable }}
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <a href="{{ .Site.BaseURL }}">
+        <img class="img-fluid"
+        src="{{ .Site.Params.footerLogo | absURL }}" alt="{{ .Site.Title }}">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--<div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <iframe class="img-fluid" src="https://www.youtube.com/embed/Q7FYYqYEwWg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div> -->
+</section>
+{{ end }}
+
+
+<script>
+  var indexURL = {{ "index.json" | absURL }}
+</script>
+
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range .Site.Params.plugins.js}}
+<script src="{{ .URL | absURL }}"></script>
+{{ end }}
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $script := resources.Get "js/script.js" | minify}}
+<script src="{{ $script.Permalink }}"></script>

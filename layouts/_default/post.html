@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+<div class="col-md-6 mb-4">
+    <article class="card">
+        <div class="card-body px-0" height="400px !important" style="padding: 0;">
+            <h5 class="d-block my-3" style="text-align: center;">{{ .Title | markdownify }}</h5>
+            <p class="card-text"  style="text-align: center; display: block; height: 50px;">{{ .Params.SubTitle }}</p>
+        {{ if .Params.Image }}
+        <a href="{{ .Permalink }}">
+            <img src="{{ .Params.Image | absURL }}" class="card-img-top" alt="{{ .Title | markdownify }}">
+        </a>
+        {{ end }}
+        {{ if .Params.playlist }}
+        <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+        <div class="card-body px-0">
+            {{- partial "soundcloudplaylistmini.html" . -}}
+        </div>
+        <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+        {{ else if .Params.SoundcloudCode }}
+        <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+        <div class="card-body px-0">
+            {{- partial "soundcloud.html" . -}}
+        </div>
+        <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+        {{ end }}
+        {{if .Params.BuyURL}}
+        <a href="{{ .Params.BuyURL }}" class="btn btn-outline-primary" style="display: block; border: 1px solid #{{ .Params.SoundcloudColor }};">Buy</a>
+        {{ end }}
+        </div>
+    </article>
+</div>

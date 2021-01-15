@@ -1,0 +1,120 @@
+{{ "<!-- navigation -->" | safeHTML }}
+<header class="navigation">
+  <div class="container">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="{{ .Site.BaseURL }}"><img class="img-fluid"
+          src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="fa fa-bars h3" style="color: whitesmoke;"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            {{ range .Site.Params.social }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ .link | safeURL }}">
+                <i class="{{ .icon }}"></i>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="{{ .Site.BaseURL }}">
+            <image src="{{ .Site.Params.logo | absURL }}">
+        </a>
+        <!-- desktop view -->
+        <div class="container col-md-4 desktop-view" style="margin: 0;">
+          <ul class="navbar-nav" style="font-family: Arges ExtraHeavy; font-size: xx-large; flex-direction: row-reverse;">
+            {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <li class="nav-item dropdown">
+              {{ if .URL}}
+              <a class="nav-link dropdown-toggle" style=" padding: 5px;" href="{{ `label/` | relLangURL }}{{ .URL | urlize | lower }}" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                <img src="/images/menu/{{ .Name }}.png">
+              </a>
+              {{ else }}
+              <a class="nav-link dropdown-toggle" style="padding: 5px;" role="button" aria-haspopup="true"
+              aria-expanded="false">
+              <img src="/images/menu/{{ .Name }}.png">
+            </a>
+              {{ end }}
+              <div class="dropdown-menu">
+                {{ range .Children }}
+                {{ if .URL}}
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large; color:  white !important"><img src="/images/menu/{{ .Name }}.png"></a>
+                {{ else }}
+                <a class="dropdown-item" style="font-size: xx-large; color:  white !important"><img src="/images/menu/{{ .Name }}.png"></a>
+                {{ end }}
+                {{ end }}
+              </div>
+            </li>
+            {{ else }}
+            <li class="nav-item">
+              <a class="nav-link" style="padding: 5px;" href="{{ .URL | urlize | lower }}"><img src="/images/menu/{{ .Name }}.png"></a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+        <!-- mobile view -->
+        <div class="container col-md-4 mobile-view" style="min-width: max-content;"> 
+          <ul class="navbar-nav" style="font-family: Arges ExtraHeavy; font-size: xx-large; flex-direction: row-reverse;">
+            {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <li class="nav-item dropdown">
+              {{ if .URL}}
+              <a class="nav-link dropdown-toggle" href="{{ `label/` | relLangURL }}{{ .URL | urlize | lower }}" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                {{ .Name | title | humanize }}
+              </a>
+              {{ else }}
+              <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true"
+              aria-expanded="false">
+              {{ .Name | title | humanize }}
+            </a>
+              {{ end }}
+              <div class="dropdown-menu">
+                {{ range .Children }}
+                {{ if .URL}}
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large; color: white !important">{{ .Name | title | humanize }}</a>
+                {{ else }}
+                <a class="dropdown-item" style="font-size: xx-large; color:  white !important">{{ .Name | title | humanize }}</a>
+                {{ end }}
+                {{ end }}
+              </div>
+            </li>
+            {{ else }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ .URL | urlize | lower }}">{{ .Name | title | humanize }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+        {{ if .Site.Params.search.enable }}
+        {{ "<!-- search -->" | safeHTML }}
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="fa fa-search"></i></button>
+          <div class="search-wrapper">
+            <form action="{{ .Site.BaseURL }}/search" class="h-100">
+              <input class="search-box px-4" style="color: white; background-color: black;" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="fa fa-close text-dark"></i></button>
+          </div>
+        </div>
+        {{ end }}
+
+        {{ if .Site.Params.navButton.enable }}
+        {{ "<!-- get start btn -->" | safeHTML }}
+        <a href="{{ .Site.Params.navButton.link | absURL }}"
+          class="btn btn-primary ml-lg-4">{{ .Site.Params.navButton.label }}</a>
+        {{ end }}
+      </div>
+    </nav>
+  </div>
+</header>
+{{ "<!-- /navigation -->" | safeHTML }}

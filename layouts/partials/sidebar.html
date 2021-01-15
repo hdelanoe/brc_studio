@@ -1,0 +1,144 @@
+<div class="col-lg-4">
+  <!-- about -->
+  <div class="widget">
+    {{ if eq .Title "BRC"}}
+    {{ with .Site.GetPage "/brc/" }}
+    <!-- <h4 class="widget-title">{{ .Title | markdownify }}</h4> -->
+    {{ if .Params.Image }}
+    <img src="{{ .Params.Image | absURL }}" alt=""
+      class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
+    {{ end }}
+    <p style="font-family: Arges ExtraHeavy; font-size: xx-large;">{{ .Summary }}</p>
+    <!-- <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a> -->
+    {{ end }}
+    {{ else if eq .Title "LMR"}}
+    {{ with .Site.GetPage "/lmr/" }}
+    <!-- <h4 class="widget-title">{{ .Title | markdownify }}</h4> -->
+    {{ if .Params.Image }}
+    <img src="{{ .Params.Image | absURL }}" alt=""
+      class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
+    {{ end }}
+    <p style="font-family: Arges ExtraHeavy; font-size: xx-large;">{{ .Summary }}</p>
+    <!-- <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a> -->
+    {{ end }}
+    {{ else }}
+    {{ with .Site.GetPage "/about/" }}
+    <!-- <h4 class="widget-title">{{ .Title | markdownify }}</h4> -->
+    {{ if .Params.Image }}
+    <a href="/about">
+    <img src="{{ .Params.Image | absURL }}" alt=""
+      class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
+    </a>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    <a href="/about">
+      <img width="400px !important" src="{{ .Site.Params.ImageContact | absURL }}" alt=""
+      class="img-fluid">
+    </a>
+    </p>
+  </div>
+
+  <!-- newsletter -->
+  <!-- <div class="widget">
+    <div class="col-lg-8 mx-auto text-center">
+      <h2 style="font-family: Arges ExtraHeavy; font-size: 134px;">{{ .Site.Params.newsletter.title | markdownify }}</h2>
+      <p class="text-light">
+        {{ .Site.Params.newsletter.content | markdownify }}</p>
+      <form action="#" class="row justify-content-center">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="25rpz">
+          <div class="input-group-append">
+            <button class="input-group-text btn btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- category -->
+  <!-- <div class="widget">
+    <h4 class="widget-title">Category</h4>
+    {{- if isset .Site.Taxonomies "categories" }}
+    {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
+    <ul class="list-unstyled">
+      {{- range $name, $items := .Site.Taxonomies.categories }}
+      <li><a
+          href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div> -->
+
+  <!-- Tags -->
+  <!-- <div class="widget">
+    <h4 class="widget-title">Tag</h4>
+    {{- if isset .Site.Taxonomies "tags" }}
+    {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+    <ul class="list-inline">
+      {{- range $name, $items := .Site.Taxonomies.tags }}
+      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+          href="{{ `tags/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | humanize }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div> -->
+
+  <!-- social -->
+  <!-- <div class="widget">
+    <h4 class="widget-title">Social</h4>
+    <ul class="list-inline social-links">
+      {{ range .Site.Params.social }}
+      <li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+      {{ end }}
+    </ul>
+  </div> -->
+  <!-- advertisement -->
+  
+  {{ if eq .Title "BRC"}}
+  <div class="widget">
+    <div class="text-center">
+      <div class="desktop-view">
+        <ul class="navbar-nav mr-auto">
+          {{ range .Site.Params.socialbrc }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .link | safeURL }}">
+              <i class="{{ .icon }}"></i>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ else if eq .Title "LMR"}}
+  <div class="widget">
+    <div class="text-center">
+      <div class="desktop-view">
+        <ul class="navbar-nav mr-auto">
+          {{ range .Site.Params.sociallmr }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .link | safeURL }}">
+              <i class="{{ .icon }}"></i>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="widget">
+    <div class="d-block mx-auto text-center">
+      {{ range .Site.Params.social }}
+        <a href="{{ .link | safeURL }}">
+          <i  style="margin: 20px; color: white;" class="{{ .icon }}"></i>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end}}
+</div>

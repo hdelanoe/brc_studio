@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        {{ if .Params.Image }}
+        <img src="{{ .Params.Image | absURL }}" alt="" class="img-fluid d-block mx-auto mb-4">
+        {{ end }}
+          <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- blog post -->
+<section class= "section-sm" style="padding: 0">
+  <div class="container-fluid px-0">
+    <div class="text-center">
+        <img style="margin: 50px" src="/images/typo/discographie.png">
+        <div class="row no-gutters">
+          {{ range first 6 (where .Site.RegularPages "Type" .Title) }}
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <a href="{{ .Params.image | absURL}}" class="venobox" title="{{ .Params.Title }}" data-gall="gallery"><img class="img-fluid w-100"
+                src="{{ .Params.image | absURL}}" alt=""></a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /blog post -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <a href="{{ .Params.PsURL | absURL }}">
+          <img src="/images/typo/presskit.png" class="card-img-top" alt="{{ .Title | markdownify }}">
+        </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

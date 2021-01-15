@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        {{ range .Params.Label }}
+        <a href="{{ `label/` | relLangURL }}{{ . | urlize }}"
+          class="text-primary">{{ . | title }}</a>
+        {{ end }}
+        <h2>{{ .Title | markdownify }}</h2>
+        <div class="mb-3 post-meta">
+          <span>{{ .Params.Artists }}</span>
+        </div>
+        {{ if .Params.image }}
+        <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100 mb-4" alt="{{ .Title | markdownify }}">
+        {{ end }}
+        <div class="content mb-5">
+          {{ if .Params.Playlist }}
+          <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+          {{- partial "soundcloudplaylist.html" . -}}
+          <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+          {{ else if .Params.SoundcloudCode }}
+          <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+          {{- partial "soundcloud2.html" . -}}
+          <hr style="border-top: 1px solid #{{ .Params.SoundcloudColor }}">
+          {{ end }}
+        </div>
+        <div class="content mb-5" style="text-align: center;">
+          {{ .Content }}
+        </div>
+        {{if .Params.BuyURL}}
+        <a href="{{ .Params.BuyURL }}" class="btn btn-outline-primary" style="display: block;">Buy</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
