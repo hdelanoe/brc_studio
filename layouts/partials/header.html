@@ -45,9 +45,9 @@
               <div class="dropdown-menu">
                 {{ range .Children }}
                 {{ if .URL}}
-                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large; color:  white !important">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large; color:">{{ .Name | title | humanize }}</a>
                 {{ else }}
-                <a class="dropdown-item" style="font-size: xx-large; color:  white !important">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" style="font-size: xx-large;">{{ .Name | title | humanize }}</a>
                 {{ end }}
                 {{ end }}
               </div>
@@ -80,9 +80,9 @@
               <div class="dropdown-menu">
                 {{ range .Children }}
                 {{ if .URL}}
-                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large; color: white !important">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large;">{{ .Name | title | humanize }}</a>
                 {{ else }}
-                <a class="dropdown-item" style="font-size: xx-large; color:  white !important">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" style="font-size: xx-large;">{{ .Name | title | humanize }}</a>
                 {{ end }}
                 {{ end }}
               </div>

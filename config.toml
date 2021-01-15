@@ -97,11 +97,10 @@ paginate = 4
   URL = "lmr/releases"
   weight = 3
 
- #[[menu.main]]
- #parent = "Events"
- #name = "Soon..."
- #URL = "podcasts/brc"
- #weight = 1
+ [[menu.main]]
+ parent = "Events"
+ name = "Soon..."
+ weight = 1
 
   [[menu.main]]
   parent = "Artistes"

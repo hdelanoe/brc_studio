@@ -27,8 +27,26 @@ border-bottom-color: $primary-color !important;
   font-style: $secondary-font;
 }
 
+.dropdown-item {
+  color: $text-color-dark;
+}
+
+.dropdown-item:hover {
+  color: $text-color-light;
+  background-color: $black;
+}
+
 .navbar-expand-lg .navbar-nav .nav-link {
   padding: 20px;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: $black !important;
+}
+
+.page-link:hover {
+  background-color: $black !important;
+  border: 1px solid $primary-color !important;
 }
 
 .mobile-view{
