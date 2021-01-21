@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://brcstudio.netlify.app/"
+baseURL = "https://brcstudio.club/"
 languageCode = "en-us"
 title = "Besançon Rythmique Club Studio"
 summaryLength = "10"
