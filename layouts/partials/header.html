@@ -63,27 +63,27 @@
         </div>
         <!-- mobile view -->
         <div class="container col-md-4 mobile-view" style="min-width: max-content;"> 
-          <ul class="navbar-nav secondary" style="font-size: small; font-weight: 900; flex-direction: row-reverse;">
+          <ul class="navbar-nav secondary" style="font-size: x-small; font-weight: 900; flex-direction: row-reverse;">
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown">
               {{ if .URL}}
               <a class="nav-link dropdown-toggle" href="{{ `label/` | relLangURL }}{{ .URL | urlize | lower }}" role="button" aria-haspopup="true"
-                aria-expanded="false" style="font-size: small; font-weight: 900;">
+                aria-expanded="false" style="font-size: x-small; font-weight: 900;">
                 {{ .Name | title | humanize }}
               </a>
               {{ else }}
               <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true"
-              aria-expanded="false" style="font-size: small; font-weight: 900;">
+              aria-expanded="false" style="font-size: x-small; font-weight: 900;">
               {{ .Name | title | humanize }}
             </a>
               {{ end }}
               <div class="dropdown-menu">
                 {{ range .Children }}
                 {{ if .URL}}
-                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: small; font-weight: 900;">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: x-small; font-weight: 900;">{{ .Name | title | humanize }}</a>
                 {{ else }}
-                <a class="dropdown-item" style="font-size: small; font-weight: 900;">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" style="font-size: x-small; font-weight: 900;">{{ .Name | title | humanize }}</a>
                 {{ end }}
                 {{ end }}
               </div>
