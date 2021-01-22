@@ -3,10 +3,8 @@
   <div class="container">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
-      <a class="navbar-brand mobile-view" href="{{ .Site.BaseURL }}">
-        <video width="600" height="215" src="/images/logo_anime.mp4" muted autoplay>
-        </video>
-      </a>
+      <a class="navbar-brand mobile-view" href="{{ .Site.BaseURL }}"><img class="img-fluid"
+          src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"></a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
         <i class="fa fa-bars h3" style="color: whitesmoke;"></i>
       </button>
