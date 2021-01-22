@@ -38,7 +38,7 @@ border-bottom-color: $primary-color !important;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 20px;
+  padding: 10px;
 }
 
 .pagination .page-item.active .page-link {
@@ -54,6 +54,13 @@ border-bottom-color: $primary-color !important;
   display: none;
   @include desktop {
     display: block;
+  }
+}
+
+.mobile-flex{
+  display: none;
+  @include desktop {
+    display: inline-flex;
   }
 }
 

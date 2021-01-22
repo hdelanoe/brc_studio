@@ -62,8 +62,8 @@
           </ul>
         </div>
         <!-- mobile view -->
-        <div class="container col-md-4 mobile-view" style="min-width: max-content;"> 
-          <ul class="navbar-nav secondary" style="font-size: x-small; font-weight: 900; flex-direction: row-reverse;">
+        <div class="container col-md-4 mobile-view" style="min-width: max-content; margin: 0;"> 
+          <ul class="navbar-nav secondary mobile-flex" style="font-size: x-small; font-weight: 900; flex-direction: row-reverse;">
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown">
