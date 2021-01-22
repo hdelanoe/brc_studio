@@ -8,7 +8,7 @@
     <img src="{{ .Params.Image | absURL }}" alt=""
       class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
     {{ end }}
-    <p style="font-family: Arges ExtraHeavy; font-size: xx-large;">{{ .Summary }}</p>
+    <p class="secondary" style="font-size: x-large;">{{ .Summary }}</p>
     <!-- <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a> -->
     {{ end }}
     {{ else if eq .Title "LMR"}}
@@ -18,7 +18,7 @@
     <img src="{{ .Params.Image | absURL }}" alt=""
       class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
     {{ end }}
-    <p style="font-family: Arges ExtraHeavy; font-size: xx-large;">{{ .Summary }}</p>
+    <p class="secondary" style="font-size: x-large;">{{ .Summary }}</p>
     <!-- <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a> -->
     {{ end }}
     {{ else }}

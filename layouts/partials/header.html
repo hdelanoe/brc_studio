@@ -27,7 +27,7 @@
         </a>
         <!-- desktop view -->
         <div class="container col-md-4 desktop-view" style="margin: 0;">
-          <ul class="navbar-nav" style="font-family: Arges ExtraHeavy; font-size: xx-large; flex-direction: row-reverse;">
+          <ul class="navbar-nav secondary" style="font-size: larger; font-weight: 900; flex-direction: row-reverse;">
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown">
@@ -45,16 +45,16 @@
               <div class="dropdown-menu">
                 {{ range .Children }}
                 {{ if .URL}}
-                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large; color:">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: larger; font-weight: 900;">{{ .Name | title | humanize }}</a>
                 {{ else }}
-                <a class="dropdown-item" style="font-size: xx-large;">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" style="font-size: larger; font-weight: 900;">{{ .Name | title | humanize }}</a>
                 {{ end }}
                 {{ end }}
               </div>
             </li>
             {{ else }}
             <li class="nav-item">
-              <a class="nav-link" style="padding: 5px;" href="{{ .URL | urlize | lower }}">{{ .Name | title | humanize }}</a>
+              <a class="nav-link" style="font-size: larger; font-weight: 900;" href="{{ .URL | urlize | lower }}">{{ .Name | title | humanize }}</a>
             </li>
             {{ end }}
             {{ end }}
@@ -62,34 +62,34 @@
         </div>
         <!-- mobile view -->
         <div class="container col-md-4 mobile-view" style="min-width: max-content;"> 
-          <ul class="navbar-nav" style="font-family: Arges ExtraHeavy; font-size: xx-large; flex-direction: row-reverse;">
+          <ul class="navbar-nav secondary" style="font-size: larger; font-weight: 900; flex-direction: row-reverse;">
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown">
               {{ if .URL}}
               <a class="nav-link dropdown-toggle" href="{{ `label/` | relLangURL }}{{ .URL | urlize | lower }}" role="button" aria-haspopup="true"
-                aria-expanded="false">
+                aria-expanded="false" style="font-size: larger; font-weight: 900;">
                 {{ .Name | title | humanize }}
               </a>
               {{ else }}
               <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false" style="font-size: larger; font-weight: 900;">
               {{ .Name | title | humanize }}
             </a>
               {{ end }}
               <div class="dropdown-menu">
                 {{ range .Children }}
                 {{ if .URL}}
-                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: xx-large;">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" href="{{ .URL | absURL }}" style="font-size: larger; font-weight: 900;">{{ .Name | title | humanize }}</a>
                 {{ else }}
-                <a class="dropdown-item" style="font-size: xx-large;">{{ .Name | title | humanize }}</a>
+                <a class="dropdown-item" style="font-size: larger; font-weight: 900;">{{ .Name | title | humanize }}</a>
                 {{ end }}
                 {{ end }}
               </div>
             </li>
             {{ else }}
             <li class="nav-item">
-              <a class="nav-link" href="{{ .URL | urlize | lower }}">{{ .Name | title | humanize }}</a>
+              <a class="nav-link" href="{{ .URL | urlize | lower }}" style="font-size: larger; font-weight: 900;">{{ .Name | title | humanize }}</a>
             </li>
             {{ end }}
             {{ end }}

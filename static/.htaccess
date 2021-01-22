@@ -1,11 +1,3 @@
-AddType application/vnd.ms-fontobject .eot
-AddType font/ttf .ttf
-AddType font/otf .otf
-<FilesMatch "\.(woff|woff2|eot)$">
-<IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "*"
-</IfModule>
-</FilesMatch>
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html
@@ -20,5 +12,5 @@ AddOutputFilterByType DEFLATE image/jpg
 AddOutputFilterByType DEFLATE image/png
 AddOutputFilterByType DEFLATE image/gif
 AddOutputFilterByType DEFLATE image/jpeg
-AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/svg+xml 
 </IfModule>

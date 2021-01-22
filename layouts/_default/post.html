@@ -3,7 +3,7 @@
     <article class="card">
         <div class="card-body px-0" height="400px !important" style="padding: 0;">
             <h5 class="d-block my-3" style="text-align: center;">{{ .Title | markdownify }}</h5>
-            <p class="card-text"  style="text-align: center; display: block; height: 50px;">{{ .Params.SubTitle }}</p>
+            <p class="card-text"  style="text-align: center; font-size:medium; display: block; height: 50px;">{{ .Params.SubTitle }}</p>
         {{ if .Params.Image }}
         <a href="{{ .Permalink }}">
             <img src="{{ .Params.Image | absURL }}" class="card-img-top" alt="{{ .Title | markdownify }}">

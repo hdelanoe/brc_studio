@@ -24,7 +24,8 @@ border-bottom-color: $primary-color !important;
   &:hover{
     color: $primary-color;
   }
-  font-style: $secondary-font;
+  font-family: $secondary-font;
+  font-weight: "500";
 }
 
 .dropdown-item {

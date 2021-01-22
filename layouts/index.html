@@ -20,7 +20,7 @@
                   <span>{{ .Params.Title }}</span>
                 </div>
                 <a href="{{ .Permalink }}"
-                  class="h1 d-block mb-4 card-title" style="text-align: center; letter-spacing: 2px; font-family: Arges ExtraHeavy; color:#{{ .Params.SoundcloudColor }} !important">{{ .Params.Subtitle | markdownify | upper }}
+                  class="h1 d-block mb-4 card-title" style="text-align: center; letter-spacing: 2px; font-size: larger; font-weight: 900; color:#{{ .Params.SoundcloudColor }} !important">{{ .Params.Subtitle | markdownify | upper }}
                 </a>
                 {{ if .Params.SoundcloudCode }}
                 <div style="position:relative;width:100%;height:200px;">
@@ -89,7 +89,7 @@
           <div class="col-md-6 mb-4">
             <article class="card" style="margin-bottom: 30px;">
               <div class="card-body px-0">
-                <p class="card-text" style="text-align: center; margin: 0;">{{ .Params.Subtitle }}</p>
+                <p class="card-text" style="text-align: center; margin: 0; letter-spacing: 2px; font-size: larger; font-weight: 900;">{{ .Params.Subtitle }}</p>
                 <a href="{{ .Permalink }}" class="h5 d-block my-3"  style="text-align: center;  margin: 0;">{{ .Title | markdownify }}</a>
               </div>
               {{ if .Params.Image }}
