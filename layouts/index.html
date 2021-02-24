@@ -22,10 +22,29 @@
                 <a href="{{ .Permalink }}"
                   class="h1 d-block mb-4 card-title" style="text-align: center; letter-spacing: 2px; font-size: larger; font-weight: 900; color:#{{ .Params.SoundcloudColor }} !important">{{ .Params.Subtitle | markdownify | upper }}
                 </a>
-                {{ if .Params.SoundcloudCode }}
-                <div style="position:relative;width:100%;height:200px;">
-                <!--   <img src="tiny-image.jpg" style="position:absolute;left:0;top:180px;" /> -->
-                {{- partial "soundcloud2.html" . -}}  
+                {{ if .Params.article }}
+                <div class="row justify-content-center">
+                  <div style="font-size: smaller !important; margin-bottom: 60px !important; margin-top: 60px !important;">
+                    <a class="text-dark" href="{{ .Params.link }}">{{ .Params.description }}</a>
+                  </div>
+                </div>
+                  {{ if .Params.SoundcloudCode }}
+                    {{ if .Params.playlist }}
+                      {{- partial "soundcloudplaylistmini.html" . -}}
+                    {{ else }}
+                      {{- partial "soundcloud.html" . -}}
+                    {{ end }}
+                  {{ end }}
+                {{ else }}
+                  {{ if .Params.SoundcloudCode }}
+                  <div style="position:relative;width:100%;height:200px;">
+                  <!--   <img src="tiny-image.jpg" style="position:absolute;left:0;top:180px;" /> -->
+                  {{ if .Params.playlist }}
+                    {{- partial "soundcloudplaylist.html" . -}}
+                  {{ else }}
+                    {{- partial "soundcloud2.html" . -}}
+                  {{ end }}
+                {{ end }}
                 </div>
                 {{ end }}
               </div>
