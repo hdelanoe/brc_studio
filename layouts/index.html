@@ -79,10 +79,10 @@
               {{ end }}
             </div> -->
             {{ if .Params.playlist }}
-            <a href="{{ .Permalink }}" class="h5 d-block mb-3" style="text-align: center;">{{ .Title | markdownify }}</a>
+            <a href="{{ .Permalink }}" class="h5 d-block mb-3" style="text-align: center; height: 22px;">{{ .Title | markdownify }}</a>
             {{- partial "soundcloudplaylistmini.html" . -}}
             {{ else if .Params.SoundcloudCode }}
-            <a href="{{ .Permalink }}" class="h5 d-block mb-3" style="text-align: center;">{{ .Title | markdownify }}</a>
+            <a href="{{ .Permalink }}" class="h5 d-block mb-3" style="text-align: center; height: 22px;">{{ .Title | markdownify }}</a>
             {{- partial "soundcloud.html" . -}}
             {{ else }}
             <h5 class="d-block mb-3" style="text-align: center;">{{ .Title | markdownify }}</h5>
@@ -107,7 +107,7 @@
           {{ range $paginator.Pages }}
           <div class="col-md-6 mb-4">
             <article class="card" style="margin-bottom: 30px;">
-              <div class="card-body px-0">
+              <div class="card-body px-0" style="height: 130px;">
                 <p class="card-text" style="text-align: center; margin: 0; letter-spacing: 2px; font-size: larger; font-weight: 900;">{{ .Params.Subtitle }}</p>
                 <a href="{{ .Permalink }}" class="h5 d-block my-3"  style="text-align: center;  margin: 0;">{{ .Title | markdownify }}</a>
               </div>
